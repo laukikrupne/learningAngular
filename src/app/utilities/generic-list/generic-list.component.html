@@ -1,0 +1,17 @@
+<div *ngIf="!list">
+    <span #loading>
+        <ng-content select="[loading]"></ng-content>
+    </span>
+    <span *ngIf="!loading.innerHTML.trim()">
+        <img src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e47r57dq5nctt646jexdgzjlo8u2u66tzfpc7gbsiq0&rid=giphy.gif&ct=g"/>
+    </span>
+</div>
+
+
+<div *ngIf="list?.length === 0">
+  There are no records to display
+</div>
+
+<ng-container *ngIf="list && list.length > 0">
+    <ng-content select="[content]"></ng-content>
+</ng-container>

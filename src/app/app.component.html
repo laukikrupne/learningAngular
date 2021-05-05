@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+<!--<app-rating (onRating)="handleRating($event)"></app-rating>-->
+
+
+<div>
+  <input type="text" (input)="title = $event.target.value" />
+</div>
+<div>
+  <input type="checkbox" checked (change)="display = !display" /> Display
+</div>
+<app-lifecycletest *ngIf="display" [title]="title"></app-lifecycletest>
+
+<!--<div class="container">
+  <p>Hello World</p>
+  {{title}}
+  <div>
+    The sum of 2 and 2 is {{2+2}}
+  </div>
+  <div>
+    The double of 3 is {{duplicateNumber(3)}}
+  </div>
+  <h2>Movie Data</h2>
+  <div>
+    {{movie.title}}
+  </div>
+  <div>
+    {{movie.releaseDate}}
+  </div>
+  <div>
+    {{movie.releaseDate | date:"dd-MM-yyyy"}}
+  </div>
+  <div>
+    {{movie.title | uppercase}}
+  </div>
+  <div>
+    {{movie.title | lowercase}}
+  </div>
+  <div>
+    {{movie.price | currency}}
+  </div>
+  <div>
+    {{movie.releaseDate | date:"dd-MMMM-yyyy" | uppercase}}
+  </div>
+
+  <app-movies-list [movies]="moviesInTheaters"></app-movies-list>
+
+  <input type="file" style="display: none;" #uploader />
+  <button (click)="uploader.click()">Load File</button>
+</div>
+-->
